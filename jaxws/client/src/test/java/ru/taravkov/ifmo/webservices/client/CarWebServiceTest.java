@@ -1,4 +1,4 @@
-package ru.taravkov.ifmo.webservices.service;
+package ru.taravkov.ifmo.webservices.client;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -27,7 +27,6 @@ public class CarWebServiceTest {
 
     @Test
     public void testFindAll() throws InterruptedException {
-
     }
 
     @AfterAll

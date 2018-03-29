@@ -34,25 +34,27 @@
                 <version>2.5</version>
 
                 <executions>
-                    <!-- wsgen -->
                     <execution>
                         <id>generate-wsdl</id>
+                        <phase>process-classes</phase>
                         <goals>
                             <goal>wsgen</goal>
                         </goals>
                         <configuration>
-                            <sei>ru.taravkov.ifmo.webservices.service.CarWebService</sei>
+                            <sei>ru.taravkov.ifmo.webservices.client.CarWebService</sei>
                             <genWsdl>true</genWsdl>
+                            <resourceDestDir>src/main/resources/wsdl</resourceDestDir>
                         </configuration>
                     </execution>
-
-                    <!-- wsimport -->
                     <execution>
-                        <id>generate-code</id>
+                        <id>generate-stubs</id>
+                        <phase>process-classes</phase>
                         <goals>
                             <goal>wsimport</goal>
                         </goals>
                         <configuration>
+                            <wsdlDirectory>src/main/resources/wsdl</wsdlDirectory>
+                            <sourceDestDir>src/main/java</sourceDestDir>
                             <packageName>ru.taravkov.ifmo.webservices.client</packageName>
                         </configuration>
                     </execution>

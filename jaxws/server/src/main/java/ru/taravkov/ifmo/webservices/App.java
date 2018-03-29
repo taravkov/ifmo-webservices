@@ -3,7 +3,7 @@ package ru.taravkov.ifmo.webservices;
 import ru.taravkov.ifmo.webservices.dao.CarDao;
 import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
 import ru.taravkov.ifmo.webservices.entity.Car;
-import ru.taravkov.ifmo.webservices.service.CarWebService;
+import ru.taravkov.ifmo.webservices.client.CarWebService;
 
 import javax.xml.ws.Endpoint;
 import java.util.logging.ConsoleHandler;

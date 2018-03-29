@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://client.webservices.ifmo.taravkov.ru/" xmlns:tns="http://client.webservices.ifmo.taravkov.ru/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="findCar" type="tns:findCar"/>
+
+  <xs:element name="findCarResponse" type="tns:findCarResponse"/>
+
+  <xs:complexType name="findCar">
+    <xs:sequence>
+      <xs:element name="make" type="xs:string" minOccurs="0"/>
+      <xs:element name="model" type="xs:string" minOccurs="0"/>
+      <xs:element name="color" type="tns:color" minOccurs="0"/>
+      <xs:element name="clazz" type="tns:clazz" minOccurs="0"/>
+      <xs:element name="rightHand" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findCarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:car" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="car">
+    <xs:sequence>
+      <xs:element name="clazz" type="tns:clazz" minOccurs="0"/>
+      <xs:element name="color" type="tns:color" minOccurs="0"/>
+      <xs:element name="make" type="xs:string" minOccurs="0"/>
+      <xs:element name="model" type="xs:string" minOccurs="0"/>
+      <xs:element name="rightHand" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="color">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="BLACK"/>
+      <xs:enumeration value="WHITE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="clazz">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUBCOMPACT"/>
+      <xs:enumeration value="COMPACT"/>
+      <xs:enumeration value="CROSSOVER"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
