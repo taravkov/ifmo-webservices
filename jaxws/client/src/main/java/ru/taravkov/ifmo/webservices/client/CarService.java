@@ -1,7 +1,6 @@
 
 package ru.taravkov.ifmo.webservices.client;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
@@ -17,7 +16,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CarService", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", wsdlLocation = "http://localhost:8080/CarService?wsdl")
+@WebServiceClient(name = "CarService", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", wsdlLocation = "jar:file:/Users/vtaravkov/Documents/itmo/sem10/webservices/jaxws/server/target/webservices-jaxws-server-1.0-SNAPSHOT.jar!/META-INF/wsdl/CarService.wsdl")
 public class CarService
     extends Service
 {
@@ -27,14 +26,11 @@ public class CarService
     private final static QName CARSERVICE_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "CarService");
 
     static {
-        URL url = null;
+        CARSERVICE_WSDL_LOCATION = ru.taravkov.ifmo.webservices.client.CarService.class.getResource("jar:file:/Users/vtaravkov/Documents/itmo/sem10/webservices/jaxws/server/target/webservices-jaxws-server-1.0-SNAPSHOT.jar!/META-INF/wsdl/CarService.wsdl");
         WebServiceException e = null;
-        try {
-            url = new URL("http://localhost:8080/CarService?wsdl");
-        } catch (MalformedURLException ex) {
-            e = new WebServiceException(ex);
+        if (CARSERVICE_WSDL_LOCATION == null) {
+            e = new WebServiceException("Cannot find 'jar:file:/Users/vtaravkov/Documents/itmo/sem10/webservices/jaxws/server/target/webservices-jaxws-server-1.0-SNAPSHOT.jar!/META-INF/wsdl/CarService.wsdl' wsdl. Place the resource correctly in the classpath.");
         }
-        CARSERVICE_WSDL_LOCATION = url;
         CARSERVICE_EXCEPTION = e;
     }
 

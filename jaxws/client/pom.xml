@@ -32,18 +32,32 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.5</version>
+
                 <executions>
+                    <!-- wsgen -->
                     <execution>
+                        <id>generate-wsdl</id>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                        <configuration>
+                            <sei>ru.taravkov.ifmo.webservices.service.CarWebService</sei>
+                            <genWsdl>true</genWsdl>
+                        </configuration>
+                    </execution>
+
+                    <!-- wsimport -->
+                    <execution>
+                        <id>generate-code</id>
                         <goals>
                             <goal>wsimport</goal>
                         </goals>
+                        <configuration>
+                            <sourceDestDir>src/main/java</sourceDestDir>
+                            <packageName>ru.taravkov.ifmo.webservices.client</packageName>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <sourceDestDir>src/main/java</sourceDestDir>
-                    <packageName>ru.taravkov.ifmo.webservices.client</packageName>
-                    <wsdlUrls>${wsdlUrls}</wsdlUrls>
-                </configuration>
             </plugin>
         </plugins>
     </build>
