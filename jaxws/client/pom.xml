@@ -43,7 +43,6 @@
                         <configuration>
                             <sei>ru.taravkov.ifmo.webservices.client.CarWebService</sei>
                             <genWsdl>true</genWsdl>
-                            <resourceDestDir>src/main/resources/wsdl</resourceDestDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -53,8 +52,7 @@
                             <goal>wsimport</goal>
                         </goals>
                         <configuration>
-                            <wsdlDirectory>src/main/resources/wsdl</wsdlDirectory>
-                            <sourceDestDir>src/main/java</sourceDestDir>
+                            <wsdlDirectory>target/generated-sources/wsdl</wsdlDirectory>
                             <packageName>ru.taravkov.ifmo.webservices.client</packageName>
                         </configuration>
                     </execution>
