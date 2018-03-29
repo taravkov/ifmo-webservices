@@ -1,10 +1,10 @@
-package ru.taravkov.ifmo.webservices.dao;
+package ru.taravkov.ifmo.webservices.client.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
-import ru.taravkov.ifmo.webservices.JdbcUtils;
-import ru.taravkov.ifmo.webservices.entity.Car;
+import ru.taravkov.ifmo.webservices.client.JdbcUtils;
+import ru.taravkov.ifmo.webservices.client.entity.Car;
 
 import java.sql.*;
 import java.util.List;
@@ -19,11 +19,11 @@ public class CarDaoImpl implements CarDao {
 
     public List<Car> find(String make, String model, Car.Color color, Car.Clazz clazz, Boolean rightHand) {
         return template.query("SELECT * FROM cars WHERE " +
-                "make = ? AND" +
-                "model = ? AND " +
-                "color = ? AND " +
-                "clazz = ? AND " +
-                "right_hand = ?", new BeanPropertyRowMapper<Car>(), make, model, color, clazz, rightHand);
+                "make = COALESCE(?, make) AND " +
+                "model = COALESCE(?, model) AND " +
+                "color = COALESCE(?, color) AND " +
+                "clazz = COALESCE(?, clazz) AND " +
+                "right_hand = COALESCE(?, right_hand)", new BeanPropertyRowMapper<>(Car.class), make, model, color, clazz, rightHand);
     }
 
     @Override
@@ -34,11 +34,11 @@ public class CarDaoImpl implements CarDao {
             final PreparedStatement statement =
                     con.prepareStatement("INSERT INTO cars (make, model, color, clazz, right_hand) VALUES (?, ?, ?, ?, ?)",
                             Statement.RETURN_GENERATED_KEYS);
-            statement.setObject(1, make);
-            statement.setObject(2, model);
-            statement.setObject(3, color);
-            statement.setObject(4, clazz);
-            statement.setObject(5, rightHand);
+            statement.setString(1, make);
+            statement.setString(2, model);
+            statement.setString(3, color.name());
+            statement.setString(4, clazz.name());
+            statement.setString(5, rightHand.toString());
             return statement;
         }, keyHolder);
 

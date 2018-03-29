@@ -1,4 +1,4 @@
-package ru.taravkov.ifmo.webservices.entity;
+package ru.taravkov.ifmo.webservices.client.entity;
 
 /**
  * @author vtaravkov
