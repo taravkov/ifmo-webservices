@@ -1,6 +1,6 @@
 # jaxws
 
-This repo contains code for labs ``lab1`` to ``lab3`` (both inclusive), i.e. the ``JAX-WS`` labs.
+This module contains code for labs ``lab1`` to ``lab3`` (both inclusive), i.e. the ``JAX-WS`` labs.
 
 There are ``server`` and ``client`` submodules.
 
