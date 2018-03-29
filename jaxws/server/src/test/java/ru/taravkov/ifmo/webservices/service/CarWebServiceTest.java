@@ -3,6 +3,7 @@ package ru.taravkov.ifmo.webservices.service;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.web.client.RestTemplate;
 import ru.taravkov.ifmo.webservices.App;
 
 
@@ -26,8 +27,9 @@ public class CarWebServiceTest {
     }
 
     @Test
-    public void test() throws InterruptedException {
-        App.main();
+    public void testFindAll() throws InterruptedException {
+        final RestTemplate template = new RestTemplate();
+        template.getForObject("http://localhost:8080/CarService/find", String.class);
     }
 
     @AfterAll

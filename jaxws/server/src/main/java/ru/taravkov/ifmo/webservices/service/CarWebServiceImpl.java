@@ -24,7 +24,7 @@ public class CarWebServiceImpl implements CarWebService {
     public List<Car> find(@WebParam(name = "make") String make,
                           @WebParam(name = "model") String model,
                           @WebParam(name = "color") Car.Color color,
-                          @WebParam(name = "class") Car.Clazz clazz,
+                          @WebParam(name = "clazz") Car.Clazz clazz,
                           @WebParam(name = "rightHand") Boolean rightHand) {
         return carDao.find(make, model, color, clazz, rightHand);
     }

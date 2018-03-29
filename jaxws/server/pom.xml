@@ -6,13 +6,12 @@
 
     <parent>
         <groupId>ru.taravkov.ifmo</groupId>
-        <artifactId>webservices-all</artifactId>
+        <artifactId>webservices-jaxws-all</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
 
-    <artifactId>webservices-lab1</artifactId>
+    <artifactId>webservices-jaxws-server</artifactId>
     <packaging>jar</packaging>
-
 
 </project>

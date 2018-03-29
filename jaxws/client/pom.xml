@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>ru.taravkov.ifmo</groupId>
+        <artifactId>webservices-jaxws-all</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+
+    <artifactId>webservices-jaxws-client</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <wsdlUrls>http://localhost:8080/CarService?wsdl</wsdlUrls>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceDestDir>src/main/java</sourceDestDir>
+                    <packageName>ru.taravkov.ifmo.webservices.client</packageName>
+                    <wsdlUrls>${wsdlUrls}</wsdlUrls>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

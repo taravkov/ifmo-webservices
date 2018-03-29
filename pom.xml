@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>lab1</module>
+        <module>jaxws</module>
     </modules>
 
     <properties>
@@ -23,18 +23,21 @@
     </properties>
 
     <dependencies>
+        <!-- Spring JDBC -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
 
+        <!-- H2 Database -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>${h2.version}</version>
         </dependency>
 
+        <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
