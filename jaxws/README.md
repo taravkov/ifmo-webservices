@@ -9,6 +9,10 @@ There are ``server`` and ``client`` submodules.
 
 Client module also contains unit tests to check the lab's requirements.
 
+### Web Service Client
+
+All of the web service client code located in package ``ru.taravkov.ifmo.webservices.client`` was generated using ``wsimport`` tool.
+
 ### Testing Web Service
 
 Web Service tests are located [here](client/src/test/java/ru/taravkov/ifmo/webservices/client/CarWebServiceTest.java)
