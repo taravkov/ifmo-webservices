@@ -30,6 +30,36 @@ public interface CarWebService {
      * @param color
      * @param rightHand
      * @param model
+     * @param id
+     * @param make
+     * @param clazz
+     * @return
+     *     returns ru.taravkov.ifmo.webservices.client.OpStatus
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.UpdateCar")
+    @ResponseWrapper(localName = "updateCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.UpdateCarResponse")
+    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/updateCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/updateCarResponse")
+    public OpStatus updateCar(
+        @WebParam(name = "id", targetNamespace = "")
+        Long id,
+        @WebParam(name = "make", targetNamespace = "")
+        String make,
+        @WebParam(name = "model", targetNamespace = "")
+        String model,
+        @WebParam(name = "color", targetNamespace = "")
+        Color color,
+        @WebParam(name = "clazz", targetNamespace = "")
+        Clazz clazz,
+        @WebParam(name = "rightHand", targetNamespace = "")
+        Boolean rightHand);
+
+    /**
+     * 
+     * @param color
+     * @param rightHand
+     * @param model
      * @param make
      * @param clazz
      * @return
@@ -41,6 +71,48 @@ public interface CarWebService {
     @ResponseWrapper(localName = "findCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCarResponse")
     @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/findCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/findCarResponse")
     public List<Car> findCar(
+        @WebParam(name = "make", targetNamespace = "")
+        String make,
+        @WebParam(name = "model", targetNamespace = "")
+        String model,
+        @WebParam(name = "color", targetNamespace = "")
+        Color color,
+        @WebParam(name = "clazz", targetNamespace = "")
+        Clazz clazz,
+        @WebParam(name = "rightHand", targetNamespace = "")
+        Boolean rightHand);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns ru.taravkov.ifmo.webservices.client.OpStatus
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.DeleteCar")
+    @ResponseWrapper(localName = "deleteCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.DeleteCarResponse")
+    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/deleteCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/deleteCarResponse")
+    public OpStatus deleteCar(
+        @WebParam(name = "id", targetNamespace = "")
+        Long id);
+
+    /**
+     * 
+     * @param color
+     * @param rightHand
+     * @param model
+     * @param make
+     * @param clazz
+     * @return
+     *     returns long
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "createCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.CreateCar")
+    @ResponseWrapper(localName = "createCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.CreateCarResponse")
+    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/createCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/createCarResponse")
+    public long createCar(
         @WebParam(name = "make", targetNamespace = "")
         String make,
         @WebParam(name = "model", targetNamespace = "")

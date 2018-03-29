@@ -26,4 +26,34 @@ public class CarWebService {
                           @WebParam(name = "rightHand") Boolean rightHand) {
         return carDao.find(make, model, color, clazz, rightHand);
     }
+
+    @WebMethod(operationName = "createCar")
+    public long create(@WebParam(name = "make") String make,
+                          @WebParam(name = "model") String model,
+                          @WebParam(name = "color") Car.Color color,
+                          @WebParam(name = "clazz") Car.Clazz clazz,
+                          @WebParam(name = "rightHand") Boolean rightHand) {
+        return carDao.create(make, model, color, clazz, rightHand);
+    }
+
+    @WebMethod(operationName = "updateCar")
+    public OpStatus update(@WebParam(name = "id") Long id,
+                           @WebParam(name = "make") String make,
+                           @WebParam(name = "model") String model,
+                           @WebParam(name = "color") Car.Color color,
+                           @WebParam(name = "clazz") Car.Clazz clazz,
+                           @WebParam(name = "rightHand") Boolean rightHand) {
+        return carDao.update(id, make, model, color, clazz, rightHand) ? OpStatus.SUCCESS : OpStatus.FAILURE;
+    }
+
+    @WebMethod(operationName = "deleteCar")
+    public OpStatus delete(@WebParam(name = "id") Long id) {
+        return carDao.delete(id) ? OpStatus.SUCCESS : OpStatus.FAILURE;
+    }
+
+    public enum OpStatus {
+        SUCCESS,
+
+        FAILURE;
+    }
 }
