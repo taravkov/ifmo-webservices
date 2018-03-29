@@ -17,8 +17,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="clazz" type="{http://service.client.webservices.ifmo.taravkov.ru/}clazz" minOccurs="0"/>
- *         &lt;element name="color" type="{http://service.client.webservices.ifmo.taravkov.ru/}color" minOccurs="0"/>
+ *         &lt;element name="clazz" type="{http://service.webservices.ifmo.taravkov.ru/}clazz" minOccurs="0"/>
+ *         &lt;element name="color" type="{http://service.webservices.ifmo.taravkov.ru/}color" minOccurs="0"/>
  *         &lt;element name="make" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="rightHand" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>

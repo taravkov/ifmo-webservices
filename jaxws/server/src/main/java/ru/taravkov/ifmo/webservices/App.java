@@ -1,9 +1,9 @@
-package ru.taravkov.ifmo.webservices.client;
+package ru.taravkov.ifmo.webservices;
 
-import ru.taravkov.ifmo.webservices.client.service.CarWebService;
-import ru.taravkov.ifmo.webservices.client.dao.CarDao;
-import ru.taravkov.ifmo.webservices.client.dao.CarDaoImpl;
-import ru.taravkov.ifmo.webservices.client.entity.Car;
+import ru.taravkov.ifmo.webservices.dao.CarDao;
+import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
+import ru.taravkov.ifmo.webservices.entity.Car;
+import ru.taravkov.ifmo.webservices.service.CarWebService;
 
 import javax.xml.ws.Endpoint;
 import java.util.logging.ConsoleHandler;

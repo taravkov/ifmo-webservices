@@ -1,6 +1,7 @@
 package ru.taravkov.ifmo.webservices.client;
 
 import org.junit.jupiter.api.*;
+import ru.taravkov.ifmo.webservices.App;
 import ru.taravkov.ifmo.webservices.client.Car;
 import ru.taravkov.ifmo.webservices.client.CarService;
 import ru.taravkov.ifmo.webservices.client.CarWebService;
@@ -19,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CarWebServiceTest {
     @BeforeAll
     public static void beforeAll() {
-        ru.taravkov.ifmo.webservices.client.App.main();
+        App.main();
     }
 
     /**

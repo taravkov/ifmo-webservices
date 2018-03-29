@@ -1,6 +1,7 @@
-package ru.taravkov.ifmo.webservices.client.dao;
+package ru.taravkov.ifmo.webservices.dao;
 
-import ru.taravkov.ifmo.webservices.client.entity.Car;
+
+import ru.taravkov.ifmo.webservices.entity.Car;
 
 import java.util.List;
 

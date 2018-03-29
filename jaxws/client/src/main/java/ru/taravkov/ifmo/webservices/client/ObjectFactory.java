@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _FindCarResponse_QNAME = new QName("http://service.client.webservices.ifmo.taravkov.ru/", "findCarResponse");
-    private final static QName _FindCar_QNAME = new QName("http://service.client.webservices.ifmo.taravkov.ru/", "findCar");
+    private final static QName _FindCar_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "findCar");
+    private final static QName _FindCarResponse_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "findCarResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ru.taravkov.ifmo.webservices.client
@@ -59,21 +59,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FindCarResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.client.webservices.ifmo.taravkov.ru/", name = "findCarResponse")
-    public JAXBElement<FindCarResponse> createFindCarResponse(FindCarResponse value) {
-        return new JAXBElement<FindCarResponse>(_FindCarResponse_QNAME, FindCarResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link FindCar }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://service.client.webservices.ifmo.taravkov.ru/", name = "findCar")
+    @XmlElementDecl(namespace = "http://service.webservices.ifmo.taravkov.ru/", name = "findCar")
     public JAXBElement<FindCar> createFindCar(FindCar value) {
         return new JAXBElement<FindCar>(_FindCar_QNAME, FindCar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindCarResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.webservices.ifmo.taravkov.ru/", name = "findCarResponse")
+    public JAXBElement<FindCarResponse> createFindCarResponse(FindCarResponse value) {
+        return new JAXBElement<FindCarResponse>(_FindCarResponse_QNAME, FindCarResponse.class, null, value);
     }
 
 }

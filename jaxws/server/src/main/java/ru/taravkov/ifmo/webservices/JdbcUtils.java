@@ -1,4 +1,4 @@
-package ru.taravkov.ifmo.webservices.client;
+package ru.taravkov.ifmo.webservices;
 
 import org.h2.jdbcx.JdbcDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;

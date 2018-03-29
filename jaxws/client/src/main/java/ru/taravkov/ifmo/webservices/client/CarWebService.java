@@ -18,7 +18,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "CarWebService", targetNamespace = "http://service.client.webservices.ifmo.taravkov.ru/")
+@WebService(name = "CarWebService", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -37,9 +37,9 @@ public interface CarWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findCar", targetNamespace = "http://service.client.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCar")
-    @ResponseWrapper(localName = "findCarResponse", targetNamespace = "http://service.client.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCarResponse")
-    @Action(input = "http://service.client.webservices.ifmo.taravkov.ru/CarWebService/findCarRequest", output = "http://service.client.webservices.ifmo.taravkov.ru/CarWebService/findCarResponse")
+    @RequestWrapper(localName = "findCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCar")
+    @ResponseWrapper(localName = "findCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCarResponse")
+    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/findCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/findCarResponse")
     public List<Car> findCar(
         @WebParam(name = "make", targetNamespace = "")
         String make,

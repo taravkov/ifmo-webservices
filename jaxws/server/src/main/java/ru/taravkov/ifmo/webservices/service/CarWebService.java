@@ -1,8 +1,8 @@
-package ru.taravkov.ifmo.webservices.client.service;
+package ru.taravkov.ifmo.webservices.service;
 
-import ru.taravkov.ifmo.webservices.client.dao.CarDao;
-import ru.taravkov.ifmo.webservices.client.dao.CarDaoImpl;
-import ru.taravkov.ifmo.webservices.client.entity.Car;
+import ru.taravkov.ifmo.webservices.dao.CarDao;
+import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
+import ru.taravkov.ifmo.webservices.entity.Car;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

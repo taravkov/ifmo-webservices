@@ -1,10 +1,10 @@
-package ru.taravkov.ifmo.webservices.client.dao;
+package ru.taravkov.ifmo.webservices.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
-import ru.taravkov.ifmo.webservices.client.JdbcUtils;
-import ru.taravkov.ifmo.webservices.client.entity.Car;
+import ru.taravkov.ifmo.webservices.JdbcUtils;
+import ru.taravkov.ifmo.webservices.entity.Car;
 
 import java.sql.*;
 import java.util.List;
