@@ -18,7 +18,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "CarWebServiceImpl", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/")
+@WebService(name = "CarWebService", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -39,7 +39,7 @@ public interface CarWebServiceImpl {
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "findCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCar")
     @ResponseWrapper(localName = "findCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCarResponse")
-    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebServiceImpl/findCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebServiceImpl/findCarResponse")
+    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/findCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/findCarResponse")
     public List<Car> findCar(
         @WebParam(name = "make", targetNamespace = "")
         String make,

@@ -1,9 +1,13 @@
 package ru.taravkov.ifmo.webservices.service;
 
+import ru.taravkov.ifmo.webservices.dao.CarDao;
+import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
 import ru.taravkov.ifmo.webservices.entity.Car;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.xml.ws.WebServiceProvider;
 import java.util.List;
 
 
@@ -11,10 +15,16 @@ import java.util.List;
  * @author vtaravkov
  * @since lab1
  */
-public interface CarWebService {
-    List<Car> find(String make,
-                   String model,
-                   Car.Color color,
-                   Car.Clazz clazz,
-                   Boolean rightHand);
+@WebService(serviceName = "CarService")
+public class CarWebService {
+    private final CarDao carDao = new CarDaoImpl();
+
+    @WebMethod(operationName = "findCar")
+    public List<Car> find(@WebParam(name = "make") String make,
+                          @WebParam(name = "model") String model,
+                          @WebParam(name = "color") Car.Color color,
+                          @WebParam(name = "clazz") Car.Clazz clazz,
+                          @WebParam(name = "rightHand") Boolean rightHand) {
+        return carDao.find(make, model, color, clazz, rightHand);
+    }
 }

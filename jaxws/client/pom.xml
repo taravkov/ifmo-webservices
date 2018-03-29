@@ -18,6 +18,14 @@
         <wsdlUrls>http://localhost:8080/CarService?wsdl</wsdlUrls>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>ru.taravkov.ifmo</groupId>
+            <artifactId>webservices-jaxws-server</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>

@@ -3,7 +3,7 @@ package ru.taravkov.ifmo.webservices;
 import ru.taravkov.ifmo.webservices.dao.CarDao;
 import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
 import ru.taravkov.ifmo.webservices.entity.Car;
-import ru.taravkov.ifmo.webservices.service.CarWebServiceImpl;
+import ru.taravkov.ifmo.webservices.service.CarWebService;
 
 import javax.xml.ws.Endpoint;
 import java.util.logging.ConsoleHandler;
@@ -29,7 +29,7 @@ public class App {
         createTable();
         createRecords();
 
-        Endpoint.publish("http://0.0.0.0:8080/CarService", new CarWebServiceImpl());
+        Endpoint.publish("http://0.0.0.0:8080/CarService", new CarWebService());
     }
 
     private static void createTable() {

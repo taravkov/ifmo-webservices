@@ -65,11 +65,11 @@ public class CarService
     /**
      * 
      * @return
-     *     returns CarWebServiceImpl
+     *     returns CarWebService
      */
-    @WebEndpoint(name = "CarWebServiceImplPort")
-    public CarWebServiceImpl getCarWebServiceImplPort() {
-        return super.getPort(new QName("http://service.webservices.ifmo.taravkov.ru/", "CarWebServiceImplPort"), CarWebServiceImpl.class);
+    @WebEndpoint(name = "CarWebServicePort")
+    public CarWebService getCarWebServicePort() {
+        return super.getPort(new QName("http://service.webservices.ifmo.taravkov.ru/", "CarWebServicePort"), CarWebService.class);
     }
 
     /**
@@ -77,11 +77,11 @@ public class CarService
      * @param features
      *     A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
      * @return
-     *     returns CarWebServiceImpl
+     *     returns CarWebService
      */
-    @WebEndpoint(name = "CarWebServiceImplPort")
-    public CarWebServiceImpl getCarWebServiceImplPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://service.webservices.ifmo.taravkov.ru/", "CarWebServiceImplPort"), CarWebServiceImpl.class, features);
+    @WebEndpoint(name = "CarWebServicePort")
+    public CarWebService getCarWebServicePort(WebServiceFeature... features) {
+        return super.getPort(new QName("http://service.webservices.ifmo.taravkov.ru/", "CarWebServicePort"), CarWebService.class, features);
     }
 
     private static URL __getWsdlLocation() {
