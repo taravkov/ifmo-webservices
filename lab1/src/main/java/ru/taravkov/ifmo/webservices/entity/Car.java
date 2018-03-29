@@ -2,7 +2,7 @@ package ru.taravkov.ifmo.webservices.entity;
 
 /**
  * @author vtaravkov
- * @since
+ * @since lab1
  */
 public class Car {
     public enum Color {

@@ -1,29 +1,28 @@
 package ru.taravkov.ifmo.webservices;
 
 import org.h2.jdbcx.JdbcDataSource;
-
-import javax.sql.DataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 
 /**
  * @author vtaravkov
- * @since
+ * @since lab1
  */
 public class JdbcUtils {
-    private static final String URL = "jdbc:h2:mem:db1";
+    private static final String URL = "jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1";
 
-    private static DataSource DATA_SOURCE;
+    private static JdbcTemplate jdbcTemplate;
 
-    public static DataSource getDataSource() {
-        if (DATA_SOURCE == null) {
+    public static JdbcTemplate getJdbcTemplate() {
+        if (jdbcTemplate == null) {
             synchronized (JdbcUtils.class) {
-                if (DATA_SOURCE == null) {
+                if (jdbcTemplate == null) {
                     final JdbcDataSource dataSource = new JdbcDataSource();
                     dataSource.setURL(URL);
-                    DATA_SOURCE = dataSource;
+                    JdbcUtils.jdbcTemplate = new JdbcTemplate(dataSource);
                 }
             }
         }
-        return DATA_SOURCE;
+        return jdbcTemplate;
     }
 }

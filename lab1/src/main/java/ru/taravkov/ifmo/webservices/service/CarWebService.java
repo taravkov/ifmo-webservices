@@ -9,8 +9,12 @@ import java.util.List;
 
 /**
  * @author vtaravkov
- * @since
+ * @since lab1
  */
 public interface CarWebService {
-    List<Car> find(String make, String model, Car.Color color, Car.Clazz clazz, Boolean rightHand);
+    List<Car> find(String make,
+                   String model,
+                   Car.Color color,
+                   Car.Clazz clazz,
+                   Boolean rightHand);
 }
