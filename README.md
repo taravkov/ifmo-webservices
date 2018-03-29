@@ -1,4 +1,6 @@
-# Web Service Technology (ifmo-webservices)
+# Web Service Technology Labs (ifmo-webservices)
+
+[![Build Status](https://travis-ci.org/taravkov/ifmo-webservices.svg?branch=master)](https://travis-ci.org/taravkov/ifmo-webservices)
 
 This project contains labs for **Web Service Technology** discipline.
 
