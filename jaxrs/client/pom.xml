@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>ru.taravkov.ifmo</groupId>
-        <artifactId>webservices-all</artifactId>
+        <artifactId>webservices-jaxrs-all</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 

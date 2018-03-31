@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>ru.taravkov.ifmo</groupId>
-        <artifactId>webservices-all</artifactId>
+        <artifactId>webservices-jaxrs-all</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -20,12 +20,6 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>ru.taravkov.ifmo</groupId>
-            <artifactId>webservices-commons</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!-- Jetty -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>

@@ -24,12 +24,15 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _VehicleClass_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "vehicleClass");
     private final static QName _UpdateCar_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "updateCar");
     private final static QName _DeleteCarResponse_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "deleteCarResponse");
     private final static QName _UpdateCarResponse_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "updateCarResponse");
     private final static QName _FindCar_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "findCar");
     private final static QName _CreateCar_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "createCar");
     private final static QName _FindCarResponse_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "findCarResponse");
+    private final static QName _Car_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "car");
+    private final static QName _Color_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "color");
     private final static QName _CreateCarResponse_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "createCarResponse");
     private final static QName _DeleteCar_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "deleteCar");
 
@@ -54,6 +57,14 @@ public class ObjectFactory {
      */
     public FindCarResponse createFindCarResponse() {
         return new FindCarResponse();
+    }
+
+    /**
+     * Create an instance of {@link Car }
+     * 
+     */
+    public Car createCar() {
+        return new Car();
     }
 
     /**
@@ -105,11 +116,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Car }
+     * Create an instance of {@link JAXBElement }{@code <}{@link VehicleClass }{@code >}}
      * 
      */
-    public Car createCar() {
-        return new Car();
+    @XmlElementDecl(namespace = "http://service.webservices.ifmo.taravkov.ru/", name = "vehicleClass")
+    public JAXBElement<VehicleClass> createVehicleClass(VehicleClass value) {
+        return new JAXBElement<VehicleClass>(_VehicleClass_QNAME, VehicleClass.class, null, value);
     }
 
     /**
@@ -164,6 +176,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.webservices.ifmo.taravkov.ru/", name = "findCarResponse")
     public JAXBElement<FindCarResponse> createFindCarResponse(FindCarResponse value) {
         return new JAXBElement<FindCarResponse>(_FindCarResponse_QNAME, FindCarResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Car }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.webservices.ifmo.taravkov.ru/", name = "car")
+    public JAXBElement<Car> createCar(Car value) {
+        return new JAXBElement<Car>(_Car_QNAME, Car.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Color }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.webservices.ifmo.taravkov.ru/", name = "color")
+    public JAXBElement<Color> createColor(Color value) {
+        return new JAXBElement<Color>(_Color_QNAME, Color.class, null, value);
     }
 
     /**

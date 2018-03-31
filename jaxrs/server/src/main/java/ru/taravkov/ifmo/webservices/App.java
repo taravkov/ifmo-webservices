@@ -1,6 +1,5 @@
 package ru.taravkov.ifmo.webservices;
 
-import ru.taravkov.ifmo.webservices.service.CarWebService;
 
 import javax.xml.ws.Endpoint;
 
