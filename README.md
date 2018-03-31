@@ -1,7 +1,7 @@
 # Web Service Technology Labs (ifmo-webservices)
 
 [![Build Status](https://travis-ci.org/taravkov/ifmo-webservices.svg?branch=master)](https://travis-ci.org/taravkov/ifmo-webservices)
-[![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/github/pvorb/property-providers?branch=develop)
+[![Code Coverage](https://img.shields.io/codecov/c/github/taravkov/ifmo-webservices/develop.svg)](https://codecov.io/github/taravkov/ifmo-webservices?branch=master)
 
 This project contains labs for **Web Service Technology** discipline.
 
