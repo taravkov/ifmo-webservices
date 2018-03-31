@@ -4,7 +4,9 @@
 
 This project contains labs for **Web Service Technology** discipline.
 
+``commons`` module contains common labs codebase, i.e. entities, DAOs and database access utilities.
 ``jaxws`` module contains code for labs ``lab1`` to ``lab3`` (both inclusive), i.e. the ``JAX-WS`` labs.
+``jaxrs`` module contains code for labs ``lab4`` to ``lab6`` (both inclusive), i.e. the ``JAX-RS`` labs.
 
 **Note:** see submodule's ``README`` for detailed lab description & reports.
 

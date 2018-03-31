@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.taravkov.ifmo.webservices.client.Clazz.CROSSOVER;
+import static ru.taravkov.ifmo.webservices.client.VehicleClass.CROSSOVER;
 
 
 /**
@@ -59,7 +59,7 @@ public class CarWebServiceTest {
         final CarService carService = new CarService(new URL("http://localhost:8080/CarService?wsdl"));
         final CarWebService webService = carService.getCarWebServicePort();
 
-        webService.createCar("Honda", "Civic", Color.WHITE, Clazz.COMPACT, false);
+        webService.createCar("Honda", "Civic", Color.WHITE, VehicleClass.COMPACT, false);
 
         final List<Car> result = webService.findCar(null, null, null, null, null); // find all
         assertEquals(3, result.size());

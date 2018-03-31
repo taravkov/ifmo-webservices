@@ -17,11 +17,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="clazz" type="{http://service.webservices.ifmo.taravkov.ru/}clazz" minOccurs="0"/>
  *         &lt;element name="color" type="{http://service.webservices.ifmo.taravkov.ru/}color" minOccurs="0"/>
  *         &lt;element name="make" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="rightHand" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="vehicleClass" type="{http://service.webservices.ifmo.taravkov.ru/}vehicleClass" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,45 +32,21 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "car", propOrder = {
-    "clazz",
     "color",
     "make",
     "model",
-    "rightHand"
+    "rightHand",
+    "vehicleClass"
 })
 public class Car {
 
-    @XmlSchemaType(name = "string")
-    protected Clazz clazz;
     @XmlSchemaType(name = "string")
     protected Color color;
     protected String make;
     protected String model;
     protected Boolean rightHand;
-
-    /**
-     * Gets the value of the clazz property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Clazz }
-     *     
-     */
-    public Clazz getClazz() {
-        return clazz;
-    }
-
-    /**
-     * Sets the value of the clazz property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Clazz }
-     *     
-     */
-    public void setClazz(Clazz value) {
-        this.clazz = value;
-    }
+    @XmlSchemaType(name = "string")
+    protected VehicleClass vehicleClass;
 
     /**
      * Gets the value of the color property.
@@ -166,6 +142,30 @@ public class Car {
      */
     public void setRightHand(Boolean value) {
         this.rightHand = value;
+    }
+
+    /**
+     * Gets the value of the vehicleClass property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link VehicleClass }
+     *     
+     */
+    public VehicleClass getVehicleClass() {
+        return vehicleClass;
+    }
+
+    /**
+     * Sets the value of the vehicleClass property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link VehicleClass }
+     *     
+     */
+    public void setVehicleClass(VehicleClass value) {
+        this.vehicleClass = value;
     }
 
 }

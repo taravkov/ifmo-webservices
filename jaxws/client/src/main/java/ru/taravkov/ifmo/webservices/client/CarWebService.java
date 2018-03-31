@@ -29,10 +29,10 @@ public interface CarWebService {
      * 
      * @param color
      * @param rightHand
+     * @param vehicleClass
      * @param model
      * @param id
      * @param make
-     * @param clazz
      * @return
      *     returns ru.taravkov.ifmo.webservices.client.OpStatus
      */
@@ -50,8 +50,8 @@ public interface CarWebService {
         String model,
         @WebParam(name = "color", targetNamespace = "")
         Color color,
-        @WebParam(name = "clazz", targetNamespace = "")
-        Clazz clazz,
+        @WebParam(name = "vehicleClass", targetNamespace = "")
+        VehicleClass vehicleClass,
         @WebParam(name = "rightHand", targetNamespace = "")
         Boolean rightHand);
 
@@ -59,9 +59,9 @@ public interface CarWebService {
      * 
      * @param color
      * @param rightHand
+     * @param vehicleClass
      * @param model
      * @param make
-     * @param clazz
      * @return
      *     returns java.util.List<ru.taravkov.ifmo.webservices.client.Car>
      */
@@ -77,8 +77,8 @@ public interface CarWebService {
         String model,
         @WebParam(name = "color", targetNamespace = "")
         Color color,
-        @WebParam(name = "clazz", targetNamespace = "")
-        Clazz clazz,
+        @WebParam(name = "vehicleClass", targetNamespace = "")
+        VehicleClass vehicleClass,
         @WebParam(name = "rightHand", targetNamespace = "")
         Boolean rightHand);
 
@@ -101,9 +101,9 @@ public interface CarWebService {
      * 
      * @param color
      * @param rightHand
+     * @param vehicleClass
      * @param model
      * @param make
-     * @param clazz
      * @return
      *     returns long
      */
@@ -119,8 +119,8 @@ public interface CarWebService {
         String model,
         @WebParam(name = "color", targetNamespace = "")
         Color color,
-        @WebParam(name = "clazz", targetNamespace = "")
-        Clazz clazz,
+        @WebParam(name = "vehicleClass", targetNamespace = "")
+        VehicleClass vehicleClass,
         @WebParam(name = "rightHand", targetNamespace = "")
         Boolean rightHand);
 
