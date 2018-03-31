@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import ru.taravkov.ifmo.webservices.JdbcUtils;
 import ru.taravkov.ifmo.webservices.entity.Car;
+import ru.taravkov.ifmo.webservices.entity.VehicleClass;
+import ru.taravkov.ifmo.webservices.entity.Color;
 
 import java.sql.*;
 import java.util.List;
@@ -21,24 +23,26 @@ import static ru.taravkov.ifmo.webservices.JdbcUtils.LOGGER;
 public class CarDaoImpl implements CarDao {
     private final JdbcTemplate template = JdbcUtils.getJdbcTemplate();
 
+    @Override
     public List<Car> find(String make,
                           String model,
-                          Car.Color color,
-                          Car.Clazz clazz,
+                          Color color,
+                          VehicleClass vehicleClass,
                           Boolean rightHand) {
         return template.query("SELECT * FROM cars WHERE " +
                 "make = COALESCE(?, make) AND " +
                 "model = COALESCE(?, model) AND " +
                 "color = COALESCE(?, color) AND " +
                 "clazz = COALESCE(?, clazz) AND " +
-                "right_hand = COALESCE(?, right_hand)", new BeanPropertyRowMapper<>(Car.class), make, model, color, clazz, rightHand);
+                "right_hand = COALESCE(?, right_hand)",
+                new BeanPropertyRowMapper<>(Car.class), make, model, color, vehicleClass, rightHand);
     }
 
     @Override
     public long create(String make,
                        String model,
-                       Car.Color color,
-                       Car.Clazz clazz,
+                       Color color,
+                       VehicleClass vehicleClass,
                        Boolean rightHand) {
         final GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -49,7 +53,7 @@ public class CarDaoImpl implements CarDao {
             statement.setString(1, make);
             statement.setString(2, model);
             statement.setString(3, color.name());
-            statement.setString(4, clazz.name());
+            statement.setString(4, vehicleClass.name());
             statement.setString(5, rightHand.toString());
             return statement;
         }, keyHolder);
@@ -61,8 +65,8 @@ public class CarDaoImpl implements CarDao {
     public boolean update(long id,
                           String make,
                           String model,
-                          Car.Color color,
-                          Car.Clazz clazz,
+                          Color color,
+                          VehicleClass vehicleClass,
                           Boolean rightHand) {
         try {
             int count = template.update(con -> {
@@ -73,7 +77,7 @@ public class CarDaoImpl implements CarDao {
                 statement.setString(1, make);
                 statement.setString(2, model);
                 statement.setString(3, color.name());
-                statement.setString(4, clazz.name());
+                statement.setString(4, vehicleClass.name());
                 statement.setString(5, rightHand.toString());
                 statement.setInt(6, (int) id);
                 return statement;

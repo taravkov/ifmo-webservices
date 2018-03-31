@@ -2,6 +2,8 @@ package ru.taravkov.ifmo.webservices.dao;
 
 
 import ru.taravkov.ifmo.webservices.entity.Car;
+import ru.taravkov.ifmo.webservices.entity.VehicleClass;
+import ru.taravkov.ifmo.webservices.entity.Color;
 
 import java.util.List;
 
@@ -16,8 +18,8 @@ public interface CarDao {
      */
     List<Car> find(String make,
                    String model,
-                   Car.Color color,
-                   Car.Clazz clazz,
+                   Color color,
+                   VehicleClass vehicleClass,
                    Boolean rightHand);
 
     /**
@@ -25,8 +27,8 @@ public interface CarDao {
      */
     long create(String make,
                 String model,
-                Car.Color color,
-                Car.Clazz clazz,
+                Color color,
+                VehicleClass vehicleClass,
                 Boolean rightHand);
 
 
@@ -36,8 +38,8 @@ public interface CarDao {
     boolean update(long id,
                    String make,
                    String model,
-                   Car.Color color,
-                   Car.Clazz clazz,
+                   Color color,
+                   VehicleClass vehicleClass,
                    Boolean rightHand);
 
     /**

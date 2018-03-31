@@ -3,6 +3,8 @@ package ru.taravkov.ifmo.webservices.service;
 import ru.taravkov.ifmo.webservices.dao.CarDao;
 import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
 import ru.taravkov.ifmo.webservices.entity.Car;
+import ru.taravkov.ifmo.webservices.entity.VehicleClass;
+import ru.taravkov.ifmo.webservices.entity.Color;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -21,29 +23,29 @@ public class CarWebService {
     @WebMethod(operationName = "findCar")
     public List<Car> find(@WebParam(name = "make") String make,
                           @WebParam(name = "model") String model,
-                          @WebParam(name = "color") Car.Color color,
-                          @WebParam(name = "clazz") Car.Clazz clazz,
+                          @WebParam(name = "color") Color color,
+                          @WebParam(name = "vehicleClass") VehicleClass vehicleClass,
                           @WebParam(name = "rightHand") Boolean rightHand) {
-        return carDao.find(make, model, color, clazz, rightHand);
+        return carDao.find(make, model, color, vehicleClass, rightHand);
     }
 
     @WebMethod(operationName = "createCar")
     public long create(@WebParam(name = "make") String make,
                           @WebParam(name = "model") String model,
-                          @WebParam(name = "color") Car.Color color,
-                          @WebParam(name = "clazz") Car.Clazz clazz,
+                          @WebParam(name = "color") Color color,
+                          @WebParam(name = "vehicleClass") VehicleClass vehicleClass,
                           @WebParam(name = "rightHand") Boolean rightHand) {
-        return carDao.create(make, model, color, clazz, rightHand);
+        return carDao.create(make, model, color, vehicleClass, rightHand);
     }
 
     @WebMethod(operationName = "updateCar")
     public OpStatus update(@WebParam(name = "id") Long id,
                            @WebParam(name = "make") String make,
                            @WebParam(name = "model") String model,
-                           @WebParam(name = "color") Car.Color color,
-                           @WebParam(name = "clazz") Car.Clazz clazz,
+                           @WebParam(name = "color") Color color,
+                           @WebParam(name = "vehicleClass") VehicleClass vehicleClass,
                            @WebParam(name = "rightHand") Boolean rightHand) {
-        return carDao.update(id, make, model, color, clazz, rightHand) ? OpStatus.SUCCESS : OpStatus.FAILURE;
+        return carDao.update(id, make, model, color, vehicleClass, rightHand) ? OpStatus.SUCCESS : OpStatus.FAILURE;
     }
 
     @WebMethod(operationName = "deleteCar")

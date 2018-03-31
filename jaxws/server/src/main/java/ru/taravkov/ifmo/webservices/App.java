@@ -2,13 +2,11 @@ package ru.taravkov.ifmo.webservices;
 
 import ru.taravkov.ifmo.webservices.dao.CarDao;
 import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
-import ru.taravkov.ifmo.webservices.entity.Car;
+import ru.taravkov.ifmo.webservices.entity.VehicleClass;
+import ru.taravkov.ifmo.webservices.entity.Color;
 import ru.taravkov.ifmo.webservices.service.CarWebService;
 
 import javax.xml.ws.Endpoint;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -38,7 +36,7 @@ public class App {
 
     private static void createRecords() {
         final CarDao carDao = new CarDaoImpl();
-        carDao.create("Ford", "Fusion", Car.Color.BLACK, Car.Clazz.COMPACT, true);
-        carDao.create("BMW", "X3", Car.Color.SILVER, Car.Clazz.CROSSOVER, true);
+        carDao.create("Ford", "Fusion", Color.BLACK, VehicleClass.COMPACT, true);
+        carDao.create("BMW", "X3", Color.SILVER, VehicleClass.CROSSOVER, true);
     }
 }

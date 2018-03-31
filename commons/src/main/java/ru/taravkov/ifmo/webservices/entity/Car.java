@@ -5,40 +5,24 @@ package ru.taravkov.ifmo.webservices.entity;
  * @since lab1
  */
 public class Car {
-    public enum Color {
-        SILVER,
-
-        BLACK,
-
-        WHITE;
-    }
-
-    public enum Clazz {
-        SUBCOMPACT,
-
-        COMPACT,
-
-        CROSSOVER;
-    }
-
     private String make;
 
     private String model;
 
     private Color color;
 
-    private Clazz clazz;
+    private VehicleClass vehicleClass;
 
     private Boolean rightHand;
 
     public Car() {
     }
 
-    public Car(String make, String model, Color color, Clazz clazz, Boolean rightHand) {
+    public Car(String make, String model, Color color, VehicleClass vehicleClass, Boolean rightHand) {
         this.make = make;
         this.model = model;
         this.color = color;
-        this.clazz = clazz;
+        this.vehicleClass = vehicleClass;
         this.rightHand = rightHand;
     }
 
@@ -66,12 +50,12 @@ public class Car {
         this.color = color;
     }
 
-    public Clazz getClazz() {
-        return clazz;
+    public VehicleClass getVehicleClass() {
+        return vehicleClass;
     }
 
-    public void setClazz(Clazz clazz) {
-        this.clazz = clazz;
+    public void setVehicleClass(VehicleClass vehicleClass) {
+        this.vehicleClass = vehicleClass;
     }
 
     public Boolean getRightHand() {
