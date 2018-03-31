@@ -1,10 +1,7 @@
 package ru.taravkov.ifmo.webservices.client;
 
 import org.junit.jupiter.api.*;
-import ru.taravkov.ifmo.webservices.App;
-import ru.taravkov.ifmo.webservices.client.Car;
-import ru.taravkov.ifmo.webservices.client.CarService;
-import ru.taravkov.ifmo.webservices.client.CarWebService;
+import ru.taravkov.ifmo.webservices.ws.App;
 
 import java.net.MalformedURLException;
 import java.net.URL;

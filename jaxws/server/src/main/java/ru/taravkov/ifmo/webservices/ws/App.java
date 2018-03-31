@@ -1,10 +1,7 @@
-package ru.taravkov.ifmo.webservices;
+package ru.taravkov.ifmo.webservices.ws;
 
-import ru.taravkov.ifmo.webservices.dao.CarDao;
-import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
-import ru.taravkov.ifmo.webservices.entity.VehicleClass;
-import ru.taravkov.ifmo.webservices.entity.Color;
-import ru.taravkov.ifmo.webservices.service.CarWebService;
+import ru.taravkov.ifmo.webservices.JdbcUtils;
+import ru.taravkov.ifmo.webservices.ws.service.CarWebService;
 
 import javax.xml.ws.Endpoint;
 

@@ -1,4 +1,4 @@
-package ru.taravkov.ifmo.webservices.service;
+package ru.taravkov.ifmo.webservices.ws.service;
 
 import ru.taravkov.ifmo.webservices.OpStatus;
 import ru.taravkov.ifmo.webservices.dao.CarDao;

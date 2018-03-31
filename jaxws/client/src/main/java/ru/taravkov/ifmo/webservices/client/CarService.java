@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CarService", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", wsdlLocation = "file:/Users/vtaravkov/Documents/itmo/sem10/webservices/jaxws/client/target/generated-sources/wsdl/CarService.wsdl")
+@WebServiceClient(name = "CarService", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", wsdlLocation = "file:/Users/vtaravkov/Documents/itmo/sem10/webservices/jaxws/client/target/generated-sources/wsdl/CarService.wsdl")
 public class CarService
     extends Service
 {
 
     private final static URL CARSERVICE_WSDL_LOCATION;
     private final static WebServiceException CARSERVICE_EXCEPTION;
-    private final static QName CARSERVICE_QNAME = new QName("http://service.webservices.ifmo.taravkov.ru/", "CarService");
+    private final static QName CARSERVICE_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "CarService");
 
     static {
         URL url = null;
@@ -69,7 +69,7 @@ public class CarService
      */
     @WebEndpoint(name = "CarWebServicePort")
     public CarWebService getCarWebServicePort() {
-        return super.getPort(new QName("http://service.webservices.ifmo.taravkov.ru/", "CarWebServicePort"), CarWebService.class);
+        return super.getPort(new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "CarWebServicePort"), CarWebService.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class CarService
      */
     @WebEndpoint(name = "CarWebServicePort")
     public CarWebService getCarWebServicePort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://service.webservices.ifmo.taravkov.ru/", "CarWebServicePort"), CarWebService.class, features);
+        return super.getPort(new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "CarWebServicePort"), CarWebService.class, features);
     }
 
     private static URL __getWsdlLocation() {

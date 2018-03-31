@@ -1,4 +1,4 @@
-package ru.taravkov.ifmo.webservices.resource;
+package ru.taravkov.ifmo.webservices.rs.resource;
 
 import ru.taravkov.ifmo.webservices.OpStatus;
 import ru.taravkov.ifmo.webservices.dao.CarDao;
@@ -7,8 +7,6 @@ import ru.taravkov.ifmo.webservices.entity.Car;
 import ru.taravkov.ifmo.webservices.entity.Color;
 import ru.taravkov.ifmo.webservices.entity.VehicleClass;
 
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;

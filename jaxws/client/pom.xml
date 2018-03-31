@@ -41,7 +41,7 @@
                             <goal>wsgen</goal>
                         </goals>
                         <configuration>
-                            <sei>ru.taravkov.ifmo.webservices.service.CarWebService</sei>
+                            <sei>ru.taravkov.ifmo.webservices.ws.service.CarWebService</sei>
                             <genWsdl>true</genWsdl>
                         </configuration>
                     </execution>

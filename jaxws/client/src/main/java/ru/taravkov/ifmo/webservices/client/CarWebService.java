@@ -18,7 +18,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "CarWebService", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/")
+@WebService(name = "CarWebService", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -38,9 +38,9 @@ public interface CarWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.UpdateCar")
-    @ResponseWrapper(localName = "updateCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.UpdateCarResponse")
-    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/updateCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/updateCarResponse")
+    @RequestWrapper(localName = "updateCar", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.UpdateCar")
+    @ResponseWrapper(localName = "updateCarResponse", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.UpdateCarResponse")
+    @Action(input = "http://service.ws.webservices.ifmo.taravkov.ru/CarWebService/updateCarRequest", output = "http://service.ws.webservices.ifmo.taravkov.ru/CarWebService/updateCarResponse")
     public OpStatus updateCar(
         @WebParam(name = "id", targetNamespace = "")
         Long id,
@@ -67,9 +67,9 @@ public interface CarWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCar")
-    @ResponseWrapper(localName = "findCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCarResponse")
-    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/findCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/findCarResponse")
+    @RequestWrapper(localName = "findCar", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCar")
+    @ResponseWrapper(localName = "findCarResponse", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.FindCarResponse")
+    @Action(input = "http://service.ws.webservices.ifmo.taravkov.ru/CarWebService/findCarRequest", output = "http://service.ws.webservices.ifmo.taravkov.ru/CarWebService/findCarResponse")
     public List<Car> findCar(
         @WebParam(name = "make", targetNamespace = "")
         String make,
@@ -90,9 +90,9 @@ public interface CarWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.DeleteCar")
-    @ResponseWrapper(localName = "deleteCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.DeleteCarResponse")
-    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/deleteCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/deleteCarResponse")
+    @RequestWrapper(localName = "deleteCar", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.DeleteCar")
+    @ResponseWrapper(localName = "deleteCarResponse", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.DeleteCarResponse")
+    @Action(input = "http://service.ws.webservices.ifmo.taravkov.ru/CarWebService/deleteCarRequest", output = "http://service.ws.webservices.ifmo.taravkov.ru/CarWebService/deleteCarResponse")
     public OpStatus deleteCar(
         @WebParam(name = "id", targetNamespace = "")
         Long id);
@@ -109,9 +109,9 @@ public interface CarWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "createCar", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.CreateCar")
-    @ResponseWrapper(localName = "createCarResponse", targetNamespace = "http://service.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.CreateCarResponse")
-    @Action(input = "http://service.webservices.ifmo.taravkov.ru/CarWebService/createCarRequest", output = "http://service.webservices.ifmo.taravkov.ru/CarWebService/createCarResponse")
+    @RequestWrapper(localName = "createCar", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.CreateCar")
+    @ResponseWrapper(localName = "createCarResponse", targetNamespace = "http://service.ws.webservices.ifmo.taravkov.ru/", className = "ru.taravkov.ifmo.webservices.client.CreateCarResponse")
+    @Action(input = "http://service.ws.webservices.ifmo.taravkov.ru/CarWebService/createCarRequest", output = "http://service.ws.webservices.ifmo.taravkov.ru/CarWebService/createCarResponse")
     public long createCar(
         @WebParam(name = "make", targetNamespace = "")
         String make,
