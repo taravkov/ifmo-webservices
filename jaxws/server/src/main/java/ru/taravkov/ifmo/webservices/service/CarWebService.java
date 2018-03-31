@@ -1,5 +1,6 @@
 package ru.taravkov.ifmo.webservices.service;
 
+import ru.taravkov.ifmo.webservices.OpStatus;
 import ru.taravkov.ifmo.webservices.dao.CarDao;
 import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
 import ru.taravkov.ifmo.webservices.entity.Car;
@@ -51,11 +52,5 @@ public class CarWebService {
     @WebMethod(operationName = "deleteCar")
     public OpStatus delete(@WebParam(name = "id") Long id) {
         return carDao.delete(id) ? OpStatus.SUCCESS : OpStatus.FAILURE;
-    }
-
-    public enum OpStatus {
-        SUCCESS,
-
-        FAILURE;
     }
 }

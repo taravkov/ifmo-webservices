@@ -1,9 +1,13 @@
 package ru.taravkov.ifmo.webservices.entity;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+
 /**
  * @author vtaravkov
  * @since lab1
  */
+@XmlRootElement
 public class Car {
     private String make;
 
