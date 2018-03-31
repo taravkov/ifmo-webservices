@@ -10,7 +10,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>commons</module>
         <module>jaxws</module>
+        <module>jaxrs</module>
     </modules>
 
     <properties>

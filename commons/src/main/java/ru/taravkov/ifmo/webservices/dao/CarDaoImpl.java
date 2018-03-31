@@ -4,13 +4,14 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
-import ru.taravkov.ifmo.webservices.App;
 import ru.taravkov.ifmo.webservices.JdbcUtils;
 import ru.taravkov.ifmo.webservices.entity.Car;
 
 import java.sql.*;
 import java.util.List;
 import java.util.logging.Level;
+
+import static ru.taravkov.ifmo.webservices.JdbcUtils.LOGGER;
 
 
 /**
@@ -79,7 +80,7 @@ public class CarDaoImpl implements CarDao {
             });
             return count == 1;
         } catch (DataAccessException e) {
-            App.LOGGER.log(Level.ALL, "Unable to update Car", e);
+            LOGGER.log(Level.ALL, "Unable to update Car", e);
             return false;
         }
     }
@@ -96,7 +97,7 @@ public class CarDaoImpl implements CarDao {
             });
             return count == 1;
         } catch (DataAccessException e) {
-            App.LOGGER.log(Level.ALL, "Unable to delete Car", e);
+            LOGGER.log(Level.ALL, "Unable to delete Car", e);
             return false;
         }
     }

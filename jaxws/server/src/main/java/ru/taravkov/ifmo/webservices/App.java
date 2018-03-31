@@ -16,14 +16,7 @@ import java.util.logging.Logger;
  * @since lab1
  */
 public class App {
-    public static final Logger LOGGER = Logger.getLogger(App.class.getCanonicalName());
 
-    static {
-        final ConsoleHandler handler = new ConsoleHandler();
-        handler.setLevel(Level.ALL);
-        LOGGER.addHandler(handler);
-        LOGGER.setLevel(Level.ALL);
-    }
 
     public static void main(String... args) {
         createTable();
