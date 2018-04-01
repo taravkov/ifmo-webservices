@@ -27,3 +27,23 @@ public void testFindAll() {
     assertEquals("BMW", result.get(1).getMake());
 }
 ```
+
+##### Error Handling Test Example:
+
+```java
+/**
+* @since lab6
+*/
+@Test
+public void testDeleteCarError() throws MalformedURLException {
+    WebResource resource = client.getClient().resource("http://localhost:8080/cars");
+
+    ClientResponse response = resource
+            .accept(MediaType.APPLICATION_JSON_TYPE)
+            .delete(ClientResponse.class);
+
+    assertEquals(ClientResponse.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+    String entity = response.getEntity(String.class);
+    assertEquals("Unable to delete car record: Id can not be null", entity);
+}
+```

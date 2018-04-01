@@ -8,10 +8,14 @@ import org.junit.jupiter.api.Test;
 import ru.taravkov.ifmo.webservices.entity.Car;
 
 import javax.ws.rs.core.MediaType;
+import javax.xml.ws.ProtocolException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 /**
@@ -103,5 +107,37 @@ public class CarResourceTest {
 
         final List<Car> newResult = client.findAll();
         assertEquals(1, result.size() - newResult.size());
+    }
+
+    /**
+     * @since lab6
+     */
+    @Test
+    public void testCreateCarError() throws MalformedURLException {
+        WebResource resource = client.getClient().resource("http://localhost:8080/cars");
+
+        ClientResponse response = resource
+                .accept(MediaType.APPLICATION_JSON_TYPE)
+                .put(ClientResponse.class);
+
+        assertEquals(ClientResponse.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+        String entity = response.getEntity(String.class);
+        assertEquals("Unable to create car record: Make can not be null", entity);
+    }
+
+    /**
+     * @since lab6
+     */
+    @Test
+    public void testDeleteCarError() throws MalformedURLException {
+        WebResource resource = client.getClient().resource("http://localhost:8080/cars");
+
+        ClientResponse response = resource
+                .accept(MediaType.APPLICATION_JSON_TYPE)
+                .delete(ClientResponse.class);
+
+        assertEquals(ClientResponse.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+        String entity = response.getEntity(String.class);
+        assertEquals("Unable to delete car record: Id can not be null", entity);
     }
 }

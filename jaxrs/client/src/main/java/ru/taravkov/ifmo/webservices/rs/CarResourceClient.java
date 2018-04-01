@@ -29,6 +29,10 @@ public class CarResourceClient {
         client = Client.create(clientConfig);
     }
 
+    public Client getClient() {
+        return client;
+    }
+
     public List<Car> findAll() {
         final WebResource resource = client.resource(url);
 

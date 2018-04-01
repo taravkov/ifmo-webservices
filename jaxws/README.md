@@ -34,6 +34,24 @@ public void testFindByMake() throws MalformedURLException {
 }
 ```
 
+##### Error Handling Test Example:
+
+```java
+/**
+* @since lab3
+ */
+@Test
+public void testDeleteCarError() throws MalformedURLException {
+    final CarService carService = new CarService(new URL("http://localhost:8080/CarService?wsdl"));
+    final CarWebService webService = carService.getCarWebServicePort();
+
+    ProtocolException e1 = assertThrows(ProtocolException.class, () -> {
+        webService.deleteCar(null);
+    });
+    assertTrue(e1.getMessage().contains("Id can not be null"));
+}
+```
+
 ### WSDL
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

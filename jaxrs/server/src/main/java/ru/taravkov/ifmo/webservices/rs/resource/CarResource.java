@@ -6,6 +6,7 @@ import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
 import ru.taravkov.ifmo.webservices.entity.Car;
 import ru.taravkov.ifmo.webservices.entity.Color;
 import ru.taravkov.ifmo.webservices.entity.VehicleClass;
+import ru.taravkov.ifmo.webservices.rs.exception.ServiceException;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -36,6 +37,21 @@ public class CarResource {
                        @QueryParam("color") Color color,
                        @QueryParam("vehicleClass") VehicleClass vehicleClass,
                        @QueryParam("rightHand") Boolean rightHand) {
+        if (make == null) {
+            throw new ServiceException("Unable to create car record", "Make can not be null");
+        }
+        if (model == null) {
+            throw new ServiceException("Unable to create car record", "Model can not be null");
+        }
+        if (color == null) {
+            throw new ServiceException("Unable to create car record", "Color can not be null");
+        }
+        if (vehicleClass == null) {
+            throw new ServiceException("Unable to create car record", "Vehicle class can not be null");
+        }
+        if (rightHand == null) {
+            throw new ServiceException("Unable to create car record", "Right hand attribute can not be null");
+        }
         return carDao.create(make, model, color, vehicleClass, rightHand);
     }
 
@@ -46,11 +62,32 @@ public class CarResource {
                            @QueryParam("color") Color color,
                            @QueryParam("vehicleClass") VehicleClass vehicleClass,
                            @QueryParam("rightHand") Boolean rightHand) {
+        if (id == null) {
+            throw new ServiceException("Unable to update car record", "Id can not be null");
+        }
+        if (make == null) {
+            throw new ServiceException("Unable to update car record", "Make can not be null");
+        }
+        if (model == null) {
+            throw new ServiceException("Unable to update car record", "Model can not be null");
+        }
+        if (color == null) {
+            throw new ServiceException("Unable to update car record", "Color can not be null");
+        }
+        if (vehicleClass == null) {
+            throw new ServiceException("Unable to update car record", "Vehicle class can not be null");
+        }
+        if (rightHand == null) {
+            throw new ServiceException("Unable to update car record", "Right hand attribute can not be null");
+        }
         return carDao.update(id, make, model, color, vehicleClass, rightHand) ? OpStatus.SUCCESS : OpStatus.FAILURE;
     }
 
     @DELETE
     public OpStatus delete(@QueryParam("id") Long id) {
+        if (id == null) {
+            throw new ServiceException("Unable to delete car record", "Id can not be null");
+        }
         return carDao.delete(id) ? OpStatus.SUCCESS : OpStatus.FAILURE;
     }
 }

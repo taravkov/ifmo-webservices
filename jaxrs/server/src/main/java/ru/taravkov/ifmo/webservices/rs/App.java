@@ -28,7 +28,7 @@ public class App {
         jerseyServletHolder.setInitOrder(0);
         jerseyServletHolder.setInitParameter(
                 "jersey.config.server.provider.packages",
-                "ru.taravkov.ifmo.webservices.rs.resource,com.fasterxml.jackson.jaxrs.json");
+                "ru.taravkov.ifmo.webservices.rs,com.fasterxml.jackson.jaxrs.json");
 
         try {
             server.start();

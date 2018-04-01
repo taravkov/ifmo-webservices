@@ -99,7 +99,7 @@ public class CarWebService {
     @WebMethod(operationName = "deleteCar")
     public OpStatus delete(@WebParam(name = "id") Long id) {
         if (id == null) {
-            throw new ServiceException("Unable to update car record", new Detail("Id can not be null"));
+            throw new ServiceException("Unable to delete car record", new Detail("Id can not be null"));
         }
         return carDao.delete(id) ? OpStatus.SUCCESS : OpStatus.FAILURE;
     }

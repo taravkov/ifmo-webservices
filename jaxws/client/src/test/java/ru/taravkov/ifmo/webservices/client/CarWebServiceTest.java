@@ -1,9 +1,9 @@
 package ru.taravkov.ifmo.webservices.client;
 
-import com.sun.xml.internal.ws.fault.ServerSOAPFaultException;
 import org.junit.jupiter.api.*;
 import ru.taravkov.ifmo.webservices.ws.App;
 
+import javax.xml.ws.ProtocolException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -112,7 +112,7 @@ public class CarWebServiceTest {
         final CarService carService = new CarService(new URL("http://localhost:8080/CarService?wsdl"));
         final CarWebService webService = carService.getCarWebServicePort();
 
-        ServerSOAPFaultException e1 = assertThrows(ServerSOAPFaultException.class, () -> {
+        ProtocolException e1 = assertThrows(ProtocolException.class, () -> {
             webService.createCar(null, null, null, null, null);
         });
         assertTrue(e1.getMessage().contains("Make can not be null"));
@@ -126,7 +126,7 @@ public class CarWebServiceTest {
         final CarService carService = new CarService(new URL("http://localhost:8080/CarService?wsdl"));
         final CarWebService webService = carService.getCarWebServicePort();
 
-        ServerSOAPFaultException e1 = assertThrows(ServerSOAPFaultException.class, () -> {
+        ProtocolException e1 = assertThrows(ProtocolException.class, () -> {
             webService.deleteCar(null);
         });
         assertTrue(e1.getMessage().contains("Id can not be null"));
