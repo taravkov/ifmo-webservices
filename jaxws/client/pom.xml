@@ -10,13 +10,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-
     <artifactId>webservices-jaxws-client</artifactId>
     <packaging>jar</packaging>
-
-    <properties>
-        <wsdlUrls>http://localhost:8080/CarService?wsdl</wsdlUrls>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -61,5 +56,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

@@ -21,18 +21,18 @@ Web Service tests are located [here](client/src/test/java/ru/taravkov/ifmo/webse
 Test Example:
 
 ```java
-    /**
-     * @since lab1
-     */
-    @Test
-    public void testFindByMake() throws MalformedURLException {
-        final CarService carService = new CarService(new URL("http://localhost:8080/CarService?wsdl"));
-        final CarWebService webService = carService.getCarWebServicePort();
+/**
+* @since lab1
+*/
+@Test
+public void testFindByMake() throws MalformedURLException {
+    final CarService carService = new CarService(new URL("http://localhost:8080/CarService?wsdl"));
+    final CarWebService webService = carService.getCarWebServicePort();
 
-        final List<Car> result = webService.findCar("Ford", null, null, null, null);
-        assertEquals(1, result.size());
-        assertEquals("Ford", result.get(0).getMake());
-    }
+    final List<Car> result = webService.findCar("Ford", null, null, null, null);
+    assertEquals(1, result.size());
+    assertEquals("Ford", result.get(0).getMake());
+}
 ```
 
 ### WSDL

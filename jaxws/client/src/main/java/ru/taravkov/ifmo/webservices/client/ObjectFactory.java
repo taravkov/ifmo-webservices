@@ -27,10 +27,8 @@ public class ObjectFactory {
     private final static QName _CreateCar_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "createCar");
     private final static QName _FindCarResponse_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "findCarResponse");
     private final static QName _Car_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "car");
-    private final static QName _Color_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "color");
     private final static QName _CreateCarResponse_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "createCarResponse");
     private final static QName _DeleteCar_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "deleteCar");
-    private final static QName _VehicleClass_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "vehicleClass");
     private final static QName _UpdateCar_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "updateCar");
     private final static QName _DeleteCarResponse_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "deleteCarResponse");
     private final static QName _UpdateCarResponse_QNAME = new QName("http://service.ws.webservices.ifmo.taravkov.ru/", "updateCarResponse");
@@ -143,15 +141,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Color }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.ws.webservices.ifmo.taravkov.ru/", name = "color")
-    public JAXBElement<Color> createColor(Color value) {
-        return new JAXBElement<Color>(_Color_QNAME, Color.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CreateCarResponse }{@code >}}
      * 
      */
@@ -167,15 +156,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.ws.webservices.ifmo.taravkov.ru/", name = "deleteCar")
     public JAXBElement<DeleteCar> createDeleteCar(DeleteCar value) {
         return new JAXBElement<DeleteCar>(_DeleteCar_QNAME, DeleteCar.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VehicleClass }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.ws.webservices.ifmo.taravkov.ru/", name = "vehicleClass")
-    public JAXBElement<VehicleClass> createVehicleClass(VehicleClass value) {
-        return new JAXBElement<VehicleClass>(_VehicleClass_QNAME, VehicleClass.class, null, value);
     }
 
     /**
