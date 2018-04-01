@@ -1,5 +1,6 @@
 package ru.taravkov.ifmo.webservices.client;
 
+import com.sun.xml.internal.ws.fault.ServerSOAPFaultException;
 import org.junit.jupiter.api.*;
 import ru.taravkov.ifmo.webservices.ws.App;
 
@@ -8,6 +9,8 @@ import java.net.URL;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static ru.taravkov.ifmo.webservices.client.VehicleClass.CROSSOVER;
 
 
@@ -99,5 +102,33 @@ public class CarWebServiceTest {
 
         final List<Car> newResult = webService.findCar(null, null, null, null, null);  // find all
         assertEquals(1, result.size() - newResult.size());
+    }
+
+    /**
+     * @since lab3
+     */
+    @Test
+    public void testCreateCarError() throws MalformedURLException {
+        final CarService carService = new CarService(new URL("http://localhost:8080/CarService?wsdl"));
+        final CarWebService webService = carService.getCarWebServicePort();
+
+        ServerSOAPFaultException e1 = assertThrows(ServerSOAPFaultException.class, () -> {
+            webService.createCar(null, null, null, null, null);
+        });
+        assertTrue(e1.getMessage().contains("Make can not be null"));
+    }
+
+    /**
+     * @since lab3
+     */
+    @Test
+    public void testDeleteCarError() throws MalformedURLException {
+        final CarService carService = new CarService(new URL("http://localhost:8080/CarService?wsdl"));
+        final CarWebService webService = carService.getCarWebServicePort();
+
+        ServerSOAPFaultException e1 = assertThrows(ServerSOAPFaultException.class, () -> {
+            webService.deleteCar(null);
+        });
+        assertTrue(e1.getMessage().contains("Id can not be null"));
     }
 }
