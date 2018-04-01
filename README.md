@@ -17,7 +17,7 @@ This project contains labs for **Web Service Technology** discipline.
 
 * Each module contains ``JUnit 5`` unit tests to check the lab's requirements.
 * ``Travis CI`` is used to run builds.
-* ``Jacoco`` and ``Codecov`` are used for code coverage metrics.
+* ``Cobertura`` and ``Codecov`` are used for code coverage metrics.
 * ``jaxws-maven-plugin`` plugin is used to generate WSDL and web service client code (using ``wsgen`` and ``wsimport``).
 * ``H2`` in-memory database instance is used to store data.
 * ``Jetty`` is used as a Servlet Container and HTTP server to serve REST resources.

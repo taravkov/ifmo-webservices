@@ -15,9 +15,9 @@ All of the web service client code located in package ``ru.taravkov.ifmo.webserv
 
 ### Testing Web Service
 
-Web Service tests are located [here](client/src/test/java/ru/taravkov/ifmo/webservices/client/CarWebServiceTest.java)
+Web Service tests are located [here](client/src/test/java/ru/taravkov/ifmo/webservices/client/CarWebServiceTest.java).
 
-Test Example:
+##### Test Example:
 
 ```java
 /**

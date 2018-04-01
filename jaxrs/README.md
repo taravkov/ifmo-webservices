@@ -11,9 +11,9 @@ Client module also contains unit tests to check the lab's requirements.
 
 ### Testing Web Service
 
-Web Service tests are located [here](client/src/test/java/ru/taravkov/ifmo/webservices/rs/CarResourceTest.java)
+Web Service tests are located [here](client/src/test/java/ru/taravkov/ifmo/webservices/rs/CarResourceTest.java).
 
-Test Example:
+##### Test Example:
 
 ```java
 /**
