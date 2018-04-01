@@ -6,10 +6,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import ru.taravkov.ifmo.webservices.JdbcUtils;
 import ru.taravkov.ifmo.webservices.entity.Car;
-import ru.taravkov.ifmo.webservices.entity.VehicleClass;
 import ru.taravkov.ifmo.webservices.entity.Color;
+import ru.taravkov.ifmo.webservices.entity.VehicleClass;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.List;
 import java.util.logging.Level;
 

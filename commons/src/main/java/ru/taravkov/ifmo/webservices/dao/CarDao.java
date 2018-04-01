@@ -2,8 +2,8 @@ package ru.taravkov.ifmo.webservices.dao;
 
 
 import ru.taravkov.ifmo.webservices.entity.Car;
-import ru.taravkov.ifmo.webservices.entity.VehicleClass;
 import ru.taravkov.ifmo.webservices.entity.Color;
+import ru.taravkov.ifmo.webservices.entity.VehicleClass;
 
 import java.util.List;
 

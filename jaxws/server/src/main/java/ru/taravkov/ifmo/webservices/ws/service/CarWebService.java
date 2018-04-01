@@ -4,8 +4,8 @@ import ru.taravkov.ifmo.webservices.OpStatus;
 import ru.taravkov.ifmo.webservices.dao.CarDao;
 import ru.taravkov.ifmo.webservices.dao.CarDaoImpl;
 import ru.taravkov.ifmo.webservices.entity.Car;
-import ru.taravkov.ifmo.webservices.entity.VehicleClass;
 import ru.taravkov.ifmo.webservices.entity.Color;
+import ru.taravkov.ifmo.webservices.entity.VehicleClass;
 import ru.taravkov.ifmo.webservices.ws.exception.ServiceException;
 import ru.taravkov.ifmo.webservices.ws.exception.ServiceException.Detail;
 

@@ -6,7 +6,6 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.servlet.ServletContainer;
 import ru.taravkov.ifmo.webservices.JdbcUtils;
-import ru.taravkov.ifmo.webservices.rs.resource.CarResource;
 
 
 /**

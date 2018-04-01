@@ -1,6 +1,7 @@
 package ru.taravkov.ifmo.webservices.client;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import ru.taravkov.ifmo.webservices.ws.App;
 
 import javax.xml.ws.ProtocolException;
@@ -8,9 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static ru.taravkov.ifmo.webservices.client.VehicleClass.CROSSOVER;
 
 

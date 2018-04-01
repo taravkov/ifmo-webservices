@@ -7,7 +7,7 @@
     <parent>
         <groupId>ru.taravkov.ifmo</groupId>
         <artifactId>webservices-jaxws-all</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.RELEASE</version>
     </parent>
 
     <artifactId>webservices-jaxws-client</artifactId>
@@ -17,7 +17,7 @@
         <dependency>
             <groupId>ru.taravkov.ifmo</groupId>
             <artifactId>webservices-jaxws-server</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.RELEASE</version>
         </dependency>
     </dependencies>
 

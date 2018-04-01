@@ -8,14 +8,10 @@ import org.junit.jupiter.api.Test;
 import ru.taravkov.ifmo.webservices.entity.Car;
 
 import javax.ws.rs.core.MediaType;
-import javax.xml.ws.ProtocolException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 /**
