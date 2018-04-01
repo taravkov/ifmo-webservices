@@ -15,8 +15,8 @@ This project contains labs for **Web Service Technology** discipline.
 
 ##### General project info:
 
-* Each module contains unit tests to check the lab's requirements.
-* ``Travis CI`` is used for builds to ensure lab requirements are met.
+* Each module contains ``JUnit 5`` unit tests to check the lab's requirements.
+* ``Travis CI`` is used to run builds.
 * ``Jacoco`` and ``Codecov`` are used for code coverage metrics.
 * ``jaxws-maven-plugin`` plugin is used to generate WSDL and web service client code (using ``wsgen`` and ``wsimport``).
 * ``H2`` in-memory database instance is used to store data.

@@ -18,13 +18,13 @@ public class App {
         JdbcUtils.createCarTable();
         JdbcUtils.createCarRecords();
 
-        ServletContextHandler handler = new ServletContextHandler(ServletContextHandler.NO_SESSIONS);
+        final ServletContextHandler handler = new ServletContextHandler(ServletContextHandler.NO_SESSIONS);
         handler.setContextPath("/");
 
-        Server server = new Server(8080);
+        final Server server = new Server(8080);
         server.setHandler(handler);
 
-        ServletHolder jerseyServletHolder = handler.addServlet(ServletContainer.class, "/*");
+        final ServletHolder jerseyServletHolder = handler.addServlet(ServletContainer.class, "/*");
         jerseyServletHolder.setInitOrder(0);
         jerseyServletHolder.setInitParameter(
                 "jersey.config.server.provider.packages",

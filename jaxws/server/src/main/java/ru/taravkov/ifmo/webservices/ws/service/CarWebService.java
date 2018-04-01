@@ -21,6 +21,9 @@ import java.util.List;
 public class CarWebService {
     private final CarDao carDao = new CarDaoImpl();
 
+    /**
+     * @since lab1
+     */
     @WebMethod(operationName = "findCar")
     public List<Car> find(@WebParam(name = "make") String make,
                           @WebParam(name = "model") String model,
@@ -30,6 +33,9 @@ public class CarWebService {
         return carDao.find(make, model, color, vehicleClass, rightHand);
     }
 
+    /**
+     * @since lab2
+     */
     @WebMethod(operationName = "createCar")
     public long create(@WebParam(name = "make") String make,
                           @WebParam(name = "model") String model,
@@ -39,6 +45,9 @@ public class CarWebService {
         return carDao.create(make, model, color, vehicleClass, rightHand);
     }
 
+    /**
+     * @since lab2
+     */
     @WebMethod(operationName = "updateCar")
     public OpStatus update(@WebParam(name = "id") Long id,
                            @WebParam(name = "make") String make,
@@ -49,6 +58,9 @@ public class CarWebService {
         return carDao.update(id, make, model, color, vehicleClass, rightHand) ? OpStatus.SUCCESS : OpStatus.FAILURE;
     }
 
+    /**
+     * @since lab2
+     */
     @WebMethod(operationName = "deleteCar")
     public OpStatus delete(@WebParam(name = "id") Long id) {
         return carDao.delete(id) ? OpStatus.SUCCESS : OpStatus.FAILURE;

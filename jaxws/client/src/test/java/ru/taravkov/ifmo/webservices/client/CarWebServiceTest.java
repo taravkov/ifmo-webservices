@@ -13,7 +13,7 @@ import static ru.taravkov.ifmo.webservices.client.VehicleClass.CROSSOVER;
 
 /**
  * @author vtaravkov
- * @since
+ * @since lab1
  */
 public class CarWebServiceTest {
     @BeforeAll
